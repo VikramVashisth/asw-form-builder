@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, copyArrayItem} from '@angular/cdk/drag-drop';
 import {Control} from './control';
 import { MatDialog } from '@angular/material/dialog';
-import { CommonMessages } from './../common/common-messages';
-import { ConfirmDialogComponent } from './../shared-components/confirm-dialog/confirm-dialog.component';
+import { CommonMessages } from '../common/common-messages';
+import { ConfirmDialogComponent } from '../shared-components/confirm-dialog/confirm-dialog.component';
 
 @Component({
-  selector: 'app-as-form-builder',
-  templateUrl: './as-form-builder.component.html',
-  styleUrls: ['./as-form-builder.component.scss']
+  selector: 'asw-form-builder',
+  templateUrl: './asw-form-builder.component.html',
+  styleUrls: ['./asw-form-builder.component.scss']
 })
-export class AsFormBuilderComponent implements OnInit {
+export class AswFormBuilderComponent implements OnInit {
   availableControls: Array<Control> = [];
   options: any[];
   formContainer: Array<Control> = [];
