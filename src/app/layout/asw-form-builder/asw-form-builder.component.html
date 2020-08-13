@@ -1,7 +1,7 @@
 <div class="main-content">
     <div class="container-fluid">
         <div class="row" cdkDropListGroup>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Controls</h4>
@@ -13,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Drop Area</h4>
@@ -26,7 +26,8 @@
                             <div *ngFor="let control of formContainer; let i = index" class="example-box" cdkDrag>
                                 <div [ngSwitch]="control.controlType">
                                     <div *ngSwitchCase="'textbox'">
-                                        <mat-form-field class="example-full-width" >
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>{{control.placeholder}}</mat-label>
                                             <input matInput [type]="control.type"
                                                             [name]="control.name"
                                                             [placeholder]="control.placeholder"
@@ -39,11 +40,11 @@
                                         </div>
                                     </div>
                                     <div *ngSwitchCase="'textarea'">
-                                        <mat-form-field class="example-full-width" *ngSwitchCase="'textarea'">
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>{{control.placeholder}}</mat-label>
                                             <textarea matInput [name]="control.name"
                                                                 [placeholder]="control.placeholder"
-                                                                [title]="control.title">
-                                            </textarea>
+                                                                [title]="control.title"></textarea>
                                         </mat-form-field>
                                         <div class="row">
                                             <button mat-button>Edit</button>
@@ -51,7 +52,8 @@
                                         </div>
                                     </div>
                                     <div *ngSwitchCase="'dropdown'">
-                                        <mat-form-field>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>{{control.placeholder}}</mat-label>
                                             <mat-select [placeholder]="control.placeholder">
                                             <mat-option *ngFor="let option of control.options" [value]="option.value">
                                                 {{ option.viewValue }}
@@ -64,7 +66,8 @@
                                         </div>
                                     </div>
                                     <div *ngSwitchCase="'multi-select'">
-                                        <mat-form-field>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>{{control.placeholder}}</mat-label>
                                             <mat-select [placeholder]="control.placeholder" multiple>
                                             <mat-option *ngFor="let option of control.options" [value]="option.value">
                                                 {{ option.viewValue }}
@@ -89,7 +92,8 @@
                                         </div>
                                     </div>
                                     <div *ngSwitchCase="'datepicker'">
-                                        <mat-form-field>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>{{control.placeholder}}</mat-label>
                                             <input matInput [matDatepicker]="picker" [placeholder]="control.placeholder">
                                             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                                             <mat-datepicker #picker></mat-datepicker>
@@ -133,6 +137,14 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Property</h4>
+                        
                     </div>
                 </div>
             </div>

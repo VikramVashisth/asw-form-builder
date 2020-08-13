@@ -1,6 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
-import PerfectScrollbar from 'perfect-scrollbar';
-import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,25 +6,9 @@ import { Location, LocationStrategy, PathLocationStrategy, PopStateEvent } from 
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Angular-Form-Bulder';
+  title = 'ASW-Form-Bulder';
 
-  constructor( public location: Location) {}
+  constructor() {}
 
-  ngAfterViewInit() {
-    this.runOnRouteChange();
-  }
-  runOnRouteChange(): void {
-    if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {
-      const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
-      const ps = new PerfectScrollbar(elemMainPanel);
-      ps.update();
-    }
-  }
-  isMac(): boolean {
-      let bool = false;
-      if (navigator.platform.toUpperCase().indexOf('MAC') >= 0 || navigator.platform.toUpperCase().indexOf('IPAD') >= 0) {
-          bool = true;
-      }
-      return bool;
-  }
+  
 }
